@@ -1,0 +1,45 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+     $('#ide').hide();
+      $('#ideU').hide();
+    })
+  </script>
+  <style>
+    #for{
+      border: solid 10px;
+      width: 15%;
+      position: relative;
+      left: 42%;
+      height:50%;
+    }
+  </style>
+</head>
+<form action="/aa">
+  <button class="btn btn-outline-info">Regresar</button>
+</form>
+<div id="for">
+  <form action="/update/<%= doc.id%>" method="POST">
+  <!--<h1><%= doc%></h1>-->
+  <input id="ide" name="ide" type="text" value="<%= doc.id%>">
+  <input id="ideU" name="ideU" type="text" value="<%= doc.usuario%>">
+  <h1>Titulo</h1>
+  <input type="text" name="textN" value="<%= doc.titulo%>">
+<h1>Descripcion</h1>
+<div id='desc'>
+  <input type="text" name="descN" value="<%= doc.mensaje%>">
+</div>
+<div>
+  <h1>Status</h1>
+  <select name="staN">
+    <option value="<%= doc.status%>"><%= doc.status%></option>
+    <option value="Inicial">Inicial</option>
+    <option value="Concluido">Concluido</option>
+    <option value="Pendiente">Pendiente</option>
+    <option value="Vencido">Vencido</option>
+  </select> <br>
+</div>
+<button type="submit">Actualizar</button>
+</form>
+</div>

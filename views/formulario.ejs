@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&display=swap" rel="stylesheet">
+<style>
+    *{
+        padding: 5px 5px;
+    }
+    #nota{
+        border: solid 5px;
+        width: 30%;
+        position: absolute;
+        left: 35%;
+        padding: 20px;
+        border-color: mediumaquamarine;
+    }
+    body{
+        background-image: linear-gradient(#052c2c,#1d1d1d);
+    }label{
+        color: mediumaquamarine;
+        font-size: x-large;
+        font-family: 'Elsie Swash Caps', cursive;
+    }
+   
+</style>
+<form action="/nota" method="POST">
+<div id="nota">
+    <label>Titulo</label> <br>
+    <input type="text" name="titulo"><br>
+    <label >Status</label><br>
+    <select name="status">
+        <option value="Inicial">Inicial</option>
+        <option value="Concluido">Concluido</option>
+        <option value="Pendiente">Pendiente</option>
+        <option value="Vencido">Vencido</option>
+    </select> <br>
+    <label>Mensaje</label> <br>
+<textarea name="tarea" id="" cols="40" rows="5"></textarea> <br><br>
+<button type="submit" id="ok" class="btn btn-outline-success">Agregar</button>
+</div>
+</form>
+<form action="/aa">
+<button class="btn btn-outline-info">Regresar</button>
+</form>

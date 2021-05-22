@@ -1,0 +1,48 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps:wght@900&family=Major+Mono+Display&display=swap" rel="stylesheet">
+</head>
+<h1>:S</h1>
+<script>
+    $(document).ready(function (){
+  updateTodos9();   
+  });
+  const updateTodos9 = () =>{
+      fetch('http://localhost:5800/demo')
+      .then(res => res.json())
+      .then(data =>{
+          if(data.response === 'success'){
+              const imas = data.data;
+              document.querySelector('#ven').innerHTML = '';
+              imas.forEach(imase => {
+                document.querySelector('#ven').innerHTML += 
+                `<div id="res">
+                  <form action="/update" method='POST'>
+                <div> 
+                  <h1>Titulo</h1>
+                  <input type='text' name='textN' value='${imase.titulo} '></input>
+                </div>
+                  <h1>Descripcion</h1>
+                  <div id='conte'>
+                    <input type='text' name='descN'  value='${imase.mensaje}'></input>
+                </div>
+                <div>
+                  <h1>Status</h1>
+                  <input type='text'  name='staN'  value='${imase.status} '></input>
+                </div>
+              <div class="action-container">
+                <button name='update' type='submit'>Actualizar</button>
+              <div>
+              </div>
+            </form>
+                `
+              });
+          }
+  })
+  .catch(err =>{
+      console.error(err);
+  })
+  }
+</script>
+<div id="ven"></div>
